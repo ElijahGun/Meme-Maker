@@ -1,37 +1,37 @@
-import React from 'react';
-import './App.css';
-import {MemePicker} from './components/meme-picker/meme-picker.component';
-import {MemeContainer} from './components/meme-container/meme-container.component';
+import React from "react";
+import "./App.css";
+import { MemePicker } from "./components/meme-picker/meme-picker.component";
+import { MemeContainer } from "./components/meme-container/meme-container.component";
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      currentMeme: 'https://i.imgflip.com/9sw43.jpg',
+      currentMeme: "https://i.imgflip.com/9sw43.jpg",
       memes: [],
-    }
+    };
   }
 
   componentDidMount() {
-    fetch('https://api.imgflip.com/get_memes')
-    .then(response => response.json())
-    .then(data => this.setState({memes: data.data.memes}))
+    fetch("https://api.imgflip.com/get_memes")
+      .then((response) => response.json())
+      .then((data) => this.setState({ memes: data.data.memes }));
   }
 
-  handleClick = (e) => this.setState({currentMeme: e.target.currentSrc});
+  handleClick = (e) => this.setState({ currentMeme: e.target.currentSrc });
 
   render() {
-
-    return(
-      <div className='App'>
-  <h1>Meme Generator</h1>
-  <div className='main-container'>
-      <MemePicker memes={this.state.memes} handleClick={this.handleClick} />  
-      <MemeContainer meme={this.state.currentMeme}/>
-  </div>
+    return (
+      <div className="App">
+        <h1>Meme Generator</h1>
+        <div className="main-container">
+          <MemePicker memes={this.state.memes} handleClick={this.handleClick} />
+          <MemeContainer meme={this.state.currentMeme} />
+          {console.log(this.state.memes)}
+        </div>
       </div>
-    )
+    );
   }
 }
 
