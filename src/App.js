@@ -19,13 +19,15 @@ class App extends React.Component {
     .then(data => this.setState({memes: data.data.memes}))
   }
 
+  handleClick = (e) => this.setState({currentMeme: e.target.currentSrc});
+
   render() {
 
     return(
       <div className='App'>
   <h1>Meme Generator</h1>
   <div className='main-container'>
-      <MemePicker memes={this.state.memes} />  
+      <MemePicker memes={this.state.memes} handleClick={this.handleClick} />  
       <MemeContainer meme={this.state.currentMeme}/>
   </div>
       </div>
