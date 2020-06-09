@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
 import {MemePicker} from './components/meme-picker/meme-picker.component';
+import {MemeContainer} from './components/meme-container/meme-container.component';
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      random: 'something',
+      currentMeme: 'https://i.imgflip.com/9sw43.jpg',
       memes: [],
     }
   }
@@ -23,11 +24,10 @@ class App extends React.Component {
     return(
       <div className='App'>
   <h1>Meme Generator</h1>
-  
-    <MemePicker memes={this.state.memes} />
-
-      
-
+  <div className='main-container'>
+      <MemePicker memes={this.state.memes} />  
+      <MemeContainer meme={this.state.currentMeme}/>
+  </div>
       </div>
     )
   }

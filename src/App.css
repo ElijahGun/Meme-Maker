@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+.main-container {
+  display: flex;
+  width: 60vw;
+  margin: 0 auto;
+}
+
 .box1 {
   background-color: red;
   height: 100%;
