@@ -1,0 +1,10 @@
+https://imgflip.com/memegenerator
+
+https://api.imgflip.com/get_memes
+
+Meme Generator Plan---
+
+Components Needed
+
+-Image slider component - stores the meme images that users can scroll through and select
+-Main meme img component
