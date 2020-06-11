@@ -1,14 +1,16 @@
 import React from "react";
 import "./meme-container.styles.css";
 
-export const MemeContainer = ({ meme }) => (
+export const MemeContainer = (props) => (
   <div
     className="container"
     style={{
-      backgroundImage: `url(${meme})`,
+      backgroundImage: `url(${props.meme})`,
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
     }}
-  ></div>
+  >
+    <p style={{ color: "blue", position: 'relative', top: `${props.offSetTop}px` }}>{props.text}</p>
+  </div>
 );

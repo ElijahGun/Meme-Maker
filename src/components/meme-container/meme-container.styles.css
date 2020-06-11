@@ -5,3 +5,9 @@
     margin-left: 2rem;
     background-position: center;
 }
+
+.user-text {
+  background: rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 100px;
+}

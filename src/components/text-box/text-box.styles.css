@@ -1,0 +1,17 @@
+.text-maker {
+    background-color: aqua;
+    border: 3px solid aliceblue;
+    width: 60vw;
+    height: 4rem;
+    margin: 1rem auto;
+    display: flex;
+  }
+
+  .btn-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .btn-box:first-child {
+    grid-column: 1 / span 2;
+  }
