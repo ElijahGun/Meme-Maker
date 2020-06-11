@@ -16,5 +16,10 @@ export const TextBox = (props) => (
     <button onClick={(e)=> props.handleDown(e) }>⬇</button>
     </div>
 
+    <div>
+        <button onClick={() => props.handleRotateLeft()}>↪</button>
+        <button onClick={() => props.handleRotateRight()}>↩</button>
+    </div>
+
   </div>
 );

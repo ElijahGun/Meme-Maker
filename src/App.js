@@ -11,14 +11,10 @@ class App extends React.Component {
     this.state = {
       currentMeme: "https://i.imgflip.com/9sw43.jpg",
       memes: [],
-      textBoxes: [
-        
-      ],
       text: 'hello world',
       offsetTop: 0,
-      offsetBottom: 0,
       offsetLeft: 0,
-      offsetRight: 0,
+      rotation: 45,
     };
   }
 
@@ -32,9 +28,12 @@ class App extends React.Component {
   handleChange = e => this.setState({text: e.target.value});
 
   handleDown = e => this.setState((state) => ({offsetTop: state.offsetTop += 2.5}))
-  handleUp = e => this.setState((state) => ({offsetBottom: state.offsetBottom += 2.5}))
-  handleRight = e => this.setState((state) => ({offsetRight: state.offsetRight += 2.5}))
-  handleLeft = e => this.setState((state) => ({offsetLeft: state.offsetLeft += 2.5}))
+  handleUp = e => this.setState((state) => ({offsetTop: state.offsetTop -= 2.5}))
+  handleRight = e => this.setState((state) => ({offsetLeft: state.offsetLeft += 2.5}))
+  handleLeft = e => this.setState((state) => ({offsetLeft: state.offsetLeft -= 2.5}))
+
+  handleRotateLeft = e => this.setState((state) => ({rotation: state.rotation -= 5}));
+  handleRotateRight = e => this.setState((state) => ({rotation: state.rotation += 5}));
 
   render() {
     return (
@@ -42,10 +41,10 @@ class App extends React.Component {
         <h1>Meme Generator</h1>
         <div className="main-container">
           <MemePicker memes={this.state.memes} handleClick={this.handleClick} />
-          <MemeContainer meme={this.state.currentMeme} text={this.state.text} offSetTop={this.state.offsetTop}/>
+          <MemeContainer meme={this.state.currentMeme} text={this.state.text} state={this.state}/>
         </div>
 
-        <TextBox handleChange={this.handleChange} handleDown={this.handleDown} handleUp={this.handleUp} handleLeft={this.handleLeft} handleRight={this.handleRight} />
+        <TextBox handleChange={this.handleChange} handleDown={this.handleDown} handleUp={this.handleUp} handleLeft={this.handleLeft} handleRight={this.handleRight} handleRotateLeft={this.handleRotateLeft} handleRotateRight={this.handleRotateRight} />
 
 
       </div>

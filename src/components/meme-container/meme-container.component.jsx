@@ -11,6 +11,18 @@ export const MemeContainer = (props) => (
       backgroundPosition: "center",
     }}
   >
-    <p style={{ color: "blue", position: 'relative', top: `${props.offSetTop}px` }}>{props.text}</p>
+
+    <p
+      style={{
+        color: "blue",
+        position: "relative",
+        top: `${props.state.offsetTop}px`,
+        bottom: `${props.state.offsetBottom}px`,
+        left: `${props.state.offsetLeft}px`,
+        transform: `rotate(${props.state.rotation}deg)`
+      }}
+    >
+      {props.text}
+    </p>
   </div>
 );
